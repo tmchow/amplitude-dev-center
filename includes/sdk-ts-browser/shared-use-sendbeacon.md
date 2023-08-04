@@ -24,8 +24,9 @@ Amplitude recommends adding your own event listener for pagehide event.
 ```ts
 window.addEventListener('pagehide',
   () => {
-    amplitude.setTransport('beacon') 
     // Sets https transport to use `sendBeacon` API
+    amplitude.setTransport('beacon')
+    // To make sure the event will be scheduled right away.
     amplitude.flush()
   },
 );
